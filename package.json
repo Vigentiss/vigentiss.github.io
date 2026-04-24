@@ -1,0 +1,12 @@
+{
+  "name": "vigentiss.github.io",
+  "private": true,
+  "description": "Vigentiss marketing site (static / GitHub Pages)",
+  "scripts": {
+    "start": "serve -l 3000 .",
+    "serve": "serve -l 3000 ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
