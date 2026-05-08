@@ -85,7 +85,7 @@
         class="hero"
         aria-label="Представяне"
         style="
-          --hero-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&amp;q=80');
+          --hero-image: url('../images/hero-hvac.png');
         "
       >
         <div class="hero__inner">
@@ -111,153 +111,174 @@
             Климатизация, термопомпи и цялостни енергийно ефективни системи за
             жилищни и търговски обекти.
           </p>
-          <div class="services__grid" role="list">
-            <article class="service-card" role="listitem">
-              <div class="service-card__icon" aria-hidden="true">
-                <svg
-                  viewBox="0 0 48 48"
-                  width="100%"
-                  height="100%"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14 20h4v-6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6h4a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V22a2 2 0 0 1 2-2Z"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                  />
-                  <path
-                    d="M18 14V10a6 6 0 0 1 12 0v4M12 32h24"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                  />
-                </svg>
+          <div class="services__list" role="list">
+            <article class="service-row" role="listitem">
+              <div class="service-card">
+                <div class="service-card__icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 48 48"
+                    width="100%"
+                    height="100%"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="5"
+                      y="13"
+                      width="38"
+                      height="15"
+                      rx="3"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    />
+                    <path
+                      d="M9 22h30"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <circle cx="37" cy="18" r="1.3" fill="currentColor" />
+                    <path
+                      d="M13 35q1.8 -2.5 3.6 0t3.6 0"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M27 35q1.8 -2.5 3.6 0t3.6 0"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h3>Битови климатици</h3>
+                <p>
+                  Продажда, монтаж и поддръжка на битови климатични системи за
+                  максимален комфорт на вашия дом.
+                </p>
               </div>
-              <h3>Климатизация</h3>
-              <p>
-                Монтаж и поддръжка на съвременни климатични системи.
-              </p>
+              <div class="service-row__media">
+                <img
+                  src="../assets/images/ac.png"
+                  alt="Стенен климатик в светла модерна стая"
+                  loading="lazy"
+                />
+              </div>
             </article>
-            <article class="service-card" role="listitem">
-              <div class="service-card__icon" aria-hidden="true">
-                <svg
-                  viewBox="0 0 48 48"
-                  width="100%"
-                  height="100%"
-                  fill="none"
-                >
-                  <path
-                    d="M8 28c0-4 2.5-8 6-9.5M40 28c0-4-2.5-8-6-9.5M8 32h32"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M20 20c2-1 2.5-1 4-1s2 .3 4 1l4-10C26 6 18 6 12 8l2 4h4l2 4Z"
-                    fill="currentColor"
-                    fill-opacity="0.15"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                </svg>
+
+            <article class="service-row service-row--reverse" role="listitem">
+              <div class="service-card">
+                <div class="service-card__icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 48 48"
+                    width="100%"
+                    height="100%"
+                    fill="none"
+                  >
+                    <path
+                      d="M8 28c0-4 2.5-8 6-9.5M40 28c0-4-2.5-8-6-9.5M8 32h32"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M20 20c2-1 2.5-1 4-1s2 .3 4 1l4-10C26 6 18 6 12 8l2 4h4l2 4Z"
+                      fill="currentColor"
+                      fill-opacity="0.15"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                </div>
+                <h3>Решения за индустрията</h3>
+                <p>
+                  Ефективни и надеждни VRF системи за отопление, охлаждане и вентилация на търговки и индустриални обекти.
+                </p>
               </div>
-              <h3>Въздушни термопомпи</h3>
-              <p>
-                Енергийно ефективно отопление и охлаждане чрез въздушни
-                термопомпи.
-              </p>
+              <div class="service-row__media">
+                <img
+                  src="../assets/images/ac-industry.png"
+                  alt="Външно тяло на въздушна термопомпа до жилищна сграда"
+                  loading="lazy"
+                />
+              </div>
             </article>
-            <article class="service-card" role="listitem">
-              <div class="service-card__icon" aria-hidden="true">
-                <svg
-                  viewBox="0 0 48 48"
-                  width="100%"
-                  height="100%"
-                  fill="none"
-                >
-                  <path
-                    d="M10 32V18h5l4-4h10l4 4h5v14a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4Z"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                  />
-                  <path
-                    d="M24 14V10M20 8h8"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                  />
-                </svg>
+
+            <article class="service-row" role="listitem">
+              <div class="service-card">
+                <div class="service-card__icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 48 48"
+                    width="100%"
+                    height="100%"
+                    fill="none"
+                  >
+                    <path
+                      d="M10 32V18h5l4-4h10l4 4h5v14a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4Z"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    />
+                    <path
+                      d="M24 14V10M20 8h8"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+                <h3>Геотермални термопомпи</h3>
+                <p>
+                  Устойчиви геотермални системи за отопление и охлаждане,
+                  използващи стабилната температура на земята.
+                </p>
               </div>
-              <h3>Геотермални термопомпи</h3>
-              <p>Геотермални системи за отопление и охлаждане.</p>
+              <div class="service-row__media">
+                <img
+                  src="https://images.unsplash.com/photo-1776860150272-653efc74193c?w=1200&q=80&auto=format&fit=crop"
+                  alt="Геотермално външно тяло пред модерна къща"
+                  loading="lazy"
+                />
+              </div>
             </article>
-            <article class="service-card" role="listitem">
-              <div class="service-card__icon" aria-hidden="true">
-                <svg
-                  viewBox="0 0 48 48"
-                  width="100%"
-                  height="100%"
-                  fill="none"
-                >
-                  <path
-                    d="M24 8v28M20 20h8M20 32h8"
-                    stroke="currentColor"
-                    stroke-width="2.2"
-                    stroke-linecap="round"
-                  />
-                  <circle
-                    cx="12"
-                    cy="22"
-                    r="3.5"
-                    fill="currentColor"
-                    fill-opacity="0.2"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                  />
-                  <circle
-                    cx="36"
-                    cy="26"
-                    r="3.5"
-                    fill="currentColor"
-                    fill-opacity="0.2"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                  />
-                </svg>
+
+            <article class="service-row" role="listitem">
+              <div class="service-card">
+                <div class="service-card__icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 48 48"
+                    width="100%"
+                    height="100%"
+                    fill="none"
+                  >
+                    <path
+                      d="M8 32c0-4 1.2-6 2.8-6h26.4c1.6 0 2.8 2 2.8 6v2H8v-2Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M10 20h3v-4a7 7 0 0 1 7-7h2a7 7 0 0 1 7 7v4h3M14 20v6h4v-6M30 20v6h4v-6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h3>Енергийно ефективни решения</h3>
+                <p>
+                  Модерни, икономични и устойчиви решения за климатичен комфорт
+                  в дома и бизнеса.
+                </p>
               </div>
-              <h3>Отопление и охлаждане</h3>
-              <p>
-                Проектиране и монтаж на отоплителни и охладителни инсталации за
-                жилищни и търговски обекти.
-              </p>
-            </article>
-            <article class="service-card" role="listitem">
-              <div class="service-card__icon" aria-hidden="true">
-                <svg
-                  viewBox="0 0 48 48"
-                  width="100%"
-                  height="100%"
-                  fill="none"
-                >
-                  <path
-                    d="M8 32c0-4 1.2-6 2.8-6h26.4c1.6 0 2.8 2 2.8 6v2H8v-2Z"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                  <path
-                    d="M10 20h3v-4a7 7 0 0 1 7-7h2a7 7 0 0 1 7 7v4h3M14 20v6h4v-6M30 20v6h4v-6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+              <div class="service-row__media">
+                <img
+                  src="https://images.unsplash.com/photo-1770625467384-304e461ef1be?w=1200&q=80&auto=format&fit=crop"
+                  alt="Дигитален стенен термостат с модерен интерфейс"
+                  loading="lazy"
+                />
               </div>
-              <h3>Енергийно ефективни решения</h3>
-              <p>
-                Модерни, икономични и устойчиви решения за климатичен комфорт в
-                дома и бизнеса.
-              </p>
             </article>
           </div>
         </div>
@@ -347,12 +368,9 @@
             </p>
           </div>
           <div>
-            <!--
-              Replace YOUR_FORM_ID with a Formspree form ID: https://formspree.io
-            -->
             <form
               class="contact-form"
-              action="https://formspree.io/f/YOUR_FORM_ID"
+              action="https://formspree.io/f/mlgzwvwn"
               method="POST"
             >
               <div class="form-group">
@@ -383,8 +401,7 @@
               <button type="submit" class="btn btn--primary">Изпрати</button>
               <p class="form-note">
                 С изпращане приемате обработка на данните във връзка със
-                запитването. Formspree изисква валиден <code>YOUR_FORM_ID</code> в
-                <code>action</code> по-горе.
+                запитването.
               </p>
             </form>
           </div>

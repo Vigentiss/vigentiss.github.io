@@ -249,26 +249,63 @@ a:hover {
   }
 }
 
-/* Hero */
+/* Hero
+   Two-layer background: a blurred "cover" copy fills the full hero area
+   (so there are no empty bands on wide screens), while a sharp "contain"
+   copy on top shows the entire photo without cropping. */
 .hero {
+  --hero-image: url("../images/hero-hvac.png");
   position: relative;
-  min-height: min(85vh, 40rem);
+  isolation: isolate;
+  width: 100%;
+  min-height: min(70vh, 34rem);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: clamp(2.5rem, 6vw, 5rem) 1.5rem;
-  background:
-    linear-gradient(135deg, rgba(15, 39, 68, 0.88) 0%, rgba(30, 58, 95, 0.75) 50%, rgba(74, 144, 226, 0.4) 100%),
-    var(--hero-image) center / cover no-repeat;
-  --hero-image: url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80");
+  background-color: #0f2744;
   color: var(--color-white);
   text-align: center;
+  overflow: hidden;
+}
+
+/* Blurred cover layer fills the empty space behind the contained image. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -2rem;
+  z-index: -2;
+  background: var(--hero-image) center / cover no-repeat;
+  filter: blur(28px) brightness(0.55) saturate(1.1);
+}
+
+/* Sharp contained layer + soft tint for headline contrast. */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 22, 40, 0) 0%,
+      rgba(10, 22, 40, 0.35) 70%,
+      rgba(10, 22, 40, 0.55) 100%
+    ),
+    var(--hero-image) center / contain no-repeat;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 55vh;
+  }
 }
 
 .hero__inner {
   max-width: 40rem;
   position: relative;
   z-index: 1;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 .hero__kicker {
@@ -393,20 +430,64 @@ h2 {
   max-width: 40rem;
 }
 
-/* Services grid */
-.services__grid {
+/* Services — alternating card + image rows */
+.services__list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+}
+
+.service-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: stretch;
+}
+
+/* Even rows: image on the left, card on the right */
+.service-row--reverse {
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+}
+
+.service-row--reverse .service-card {
+  order: 2;
+}
+
+.service-row--reverse .service-row__media {
+  order: 1;
+}
+
+.service-row__media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  aspect-ratio: 16 / 11;
+}
+
+.service-row__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.service-row:hover .service-row__media img {
+  transform: scale(1.03);
 }
 
 .service-card {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  padding: 1.5rem;
+  justify-content: center;
+  gap: 1rem;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
   background: var(--color-surface-elevated);
-  border: 1px solid rgba(30, 58, 95, 0.1);
+  border: 1px solid rgba(30, 58, 95, 0.08);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   transition: box-shadow 0.2s, border-color 0.2s;
@@ -434,6 +515,7 @@ h2 {
 .service-card__icon {
   width: 3rem;
   height: 3rem;
+  margin-bottom: 0.5rem;
   color: var(--color-blue);
 }
 
@@ -442,17 +524,37 @@ h2 {
 }
 
 .service-card h3 {
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: 700;
+  line-height: 1.25;
   margin: 0;
   color: var(--color-text);
+  letter-spacing: -0.01em;
 }
 
 .service-card p {
   margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.65;
   color: var(--color-text-muted);
+}
+
+/* Mobile: stack card on top, image below, no alternating */
+@media (max-width: 720px) {
+  .service-row,
+  .service-row--reverse {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .service-row--reverse .service-card,
+  .service-row--reverse .service-row__media {
+    order: initial;
+  }
+
+  .service-row__media {
+    aspect-ratio: 4 / 3;
+  }
 }
 
 /* Benefits */
