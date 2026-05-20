@@ -254,7 +254,7 @@ a:hover {
    (so there are no empty bands on wide screens), while a sharp "contain"
    copy on top shows the entire photo without cropping. */
 .hero {
-  --hero-image: url("../images/hero-hvac.png");
+  --hero-image: url("/assets/images/main.png");
   position: relative;
   isolation: isolate;
   width: 100%;
@@ -744,6 +744,13 @@ h2 {
 
 .case-study__content h2:first-child {
   margin-top: 0;
+}
+
+.case-study__content h3 {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-weight: 700;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--color-text);
 }
 
 .case-study__content p {
