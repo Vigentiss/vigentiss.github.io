@@ -458,32 +458,23 @@ h2 {
 }
 
 .service-row__media {
-  position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--color-surface);
   box-shadow: var(--shadow-sm);
-  aspect-ratio: 16 / 11;
 }
 
 .service-row__media img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
   transition: transform 0.4s ease;
 }
 
-.service-row__media--fit {
-  aspect-ratio: auto;
-}
-
 .service-row__media--fit img {
-  position: relative;
-  inset: auto;
-  width: 100%;
+  aspect-ratio: auto;
   height: auto;
   object-fit: contain;
   object-position: center;
@@ -565,11 +556,11 @@ h2 {
     order: initial;
   }
 
-  .service-row__media {
+  .service-row__media img {
     aspect-ratio: 4 / 3;
   }
 
-  .service-row__media--fit {
+  .service-row__media--fit img {
     aspect-ratio: auto;
   }
 }
